@@ -21,7 +21,6 @@ public class SynchronizedFunction {
     private ReentrantLock reentrantLock = new ReentrantLock();
     //Condition 原理
     private Condition condition = reentrantLock.newCondition();
-
     //ReentrantReadWriteLock ReadWriteLock 排他锁+共享 悲观+乐观 可设定是否公平
     //核心原理 读写状态 + 等待队列
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
