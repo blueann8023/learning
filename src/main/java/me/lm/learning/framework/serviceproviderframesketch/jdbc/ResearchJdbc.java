@@ -4,18 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ReserchJdbc {
+public class ResearchJdbc {
     public static void main(String[] args){
         try {
 
             // Classloader load class (instance Class)
             // Initial class (run static block)
             // Static block
-            // DriverManager.registerDriver:Service Register API
+            // DriverManager.registerDriver:Provider Registration API
             Class.forName("com.mysql.jdbc.Driver");//Service Provider Interface Implemetns
             // Driver: Service Provider Interface
             // DriverManager.getConnection : Service Access API
-            // Connection : Service interface
+            // Connection : Service Interface
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/spring", "root", "root");
             connection.createStatement();
         } catch (ClassNotFoundException e) {
