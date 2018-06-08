@@ -4,6 +4,11 @@ import org.junit.Test;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Java8 {
 
@@ -35,4 +40,33 @@ public class Java8 {
         Game<String> game1 = System.out::print;
     }
 
+    // stream map
+    @Test
+    public void testStreamMap() {
+
+        List<RegionVO> regions = new ArrayList<>();
+        for (int k = 0; k < 3; k++) {
+            RegionVO region = new RegionVO();
+            region.setRegionId("k:"+ k);
+            List<RowVO> rows = new ArrayList<>();
+            for (int j = 0; j < 5; j++) {
+                RowVO row = new RowVO();
+
+                List<SeatVO> seats = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    SeatVO seat = new SeatVO();
+                    seat.setSeatNo("k:" + k + ",j:" + j + ",i:" + i);
+                    seats.add(seat);
+                }
+                row.setSeats(seats);
+                rows.add(row);
+            }
+            region.setRows(rows);
+            regions.add(region);
+        }
+        Map<String, Stream<SeatVO>> regoinMapSeats = regions.stream().collect(Collectors.toMap(RegionVO::getRegionId, tSeatRegion -> tSeatRegion.getRows().stream().flatMap(tRow -> tRow.getSeats().stream())));
+        String key = regoinMapSeats.entrySet().stream().filter(entry -> entry.getValue().anyMatch(tSeat -> "k:2,j:0,i:8".equals(tSeat.getSeatNo()))).findFirst().get().getKey();
+        System.out.println("KEY:" + key);
+
+    }
 }

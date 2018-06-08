@@ -1,5 +1,7 @@
 package me.lm.learning.algorithm;
 
+
+
 //八大排序
 public class Sorting {
 
@@ -8,6 +10,11 @@ public class Sorting {
     //Insertion Sort
     //将无序数组中的key，插入到有序数组中
     //worst:O(n^2)
+
+    /**
+     *
+     * @param array
+     */
     public void insertionSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
