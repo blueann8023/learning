@@ -5,6 +5,7 @@ import org.junit.Test;
 import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -47,7 +48,7 @@ public class Java8 {
         List<RegionVO> regions = new ArrayList<>();
         for (int k = 0; k < 3; k++) {
             RegionVO region = new RegionVO();
-            region.setRegionId("k:"+ k);
+            region.setRegionId("k:" + k);
             List<RowVO> rows = new ArrayList<>();
             for (int j = 0; j < 5; j++) {
                 RowVO row = new RowVO();
@@ -67,6 +68,13 @@ public class Java8 {
         Map<String, Stream<SeatVO>> regoinMapSeats = regions.stream().collect(Collectors.toMap(RegionVO::getRegionId, tSeatRegion -> tSeatRegion.getRows().stream().flatMap(tRow -> tRow.getSeats().stream())));
         String key = regoinMapSeats.entrySet().stream().filter(entry -> entry.getValue().anyMatch(tSeat -> "k:2,j:0,i:8".equals(tSeat.getSeatNo()))).findFirst().get().getKey();
         System.out.println("KEY:" + key);
+
+    }
+
+    @Test
+    public void testStreamDistinct() {
+        String[] a = {"AA", "BB", "CC", "AA"};
+        System.out.println(Arrays.stream(a).distinct().count());
 
     }
 }
