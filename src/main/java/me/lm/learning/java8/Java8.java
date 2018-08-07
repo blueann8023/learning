@@ -77,4 +77,9 @@ public class Java8 {
         System.out.println(Arrays.stream(a).distinct().count());
 
     }
+
+    @Test
+    public void testLamda() {
+        Runnable runnable = () -> System.out.println("aa");
+    }
 }
