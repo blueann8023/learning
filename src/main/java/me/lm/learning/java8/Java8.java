@@ -82,4 +82,8 @@ public class Java8 {
     public void testLamda() {
         Runnable runnable = () -> System.out.println("aa");
     }
+
 }
+
+
+

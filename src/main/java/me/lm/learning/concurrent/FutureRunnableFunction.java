@@ -17,6 +17,7 @@ public class FutureRunnableFunction {
 
     private Callable callable = () -> {
         int i = counter.getAndIncrement();
+        Thread.sleep(1000);
         System.out.println("Callable Task " + i);
         return i;
     };
@@ -26,6 +27,23 @@ public class FutureRunnableFunction {
         RunnableFuture<Integer> runnableFuture = new FutureTask<Integer>(callable);
         Thread thread4Future = new Thread(runnableFuture);
         thread4Future.start();
+        try {
+            System.out.println(runnableFuture.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void testFutureTaskInThreadHaveProblem() {
+        RunnableFuture<Integer> runnableFuture = new FutureTask<Integer>(callable);
+        Thread thread4Future = new Thread(runnableFuture);
+        Thread thread4Future2 = new Thread(runnableFuture);
+        thread4Future.start();
+        thread4Future2.start();
         try {
             System.out.println(runnableFuture.get());
         } catch (InterruptedException e) {
@@ -72,4 +90,5 @@ public class FutureRunnableFunction {
             e.printStackTrace();
         }
     }
+
 }
