@@ -11,7 +11,6 @@ public class SpellCheckClient {
 
     @Test
     public void testSpellCheckerClientSingleton(){
-
         //英语字典
         SpellCheckerSingleton.INSTANCE.isValid("你好");
     }
