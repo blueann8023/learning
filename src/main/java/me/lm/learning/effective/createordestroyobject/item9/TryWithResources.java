@@ -1,7 +1,5 @@
 package me.lm.learning.effective.createordestroyobject.item9;
 
-import org.junit.Test;
-
 import java.io.*;
 
 /**

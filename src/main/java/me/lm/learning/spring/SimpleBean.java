@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SimpleBean implements BeanFactoryPostProcessor {
 
-
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
 

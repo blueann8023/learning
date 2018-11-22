@@ -5,6 +5,7 @@
 
     <groupId>me.lm</groupId>
     <artifactId>learning</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1</version>
 
     <parent>
@@ -33,13 +34,23 @@
         </dependency>
 
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>16.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.netflix.zuul</groupId>
+            <artifactId>zuul-core</artifactId>
+            <version>2.1.2</version>
+        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -51,7 +62,6 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
 
     <build>
         <plugins>

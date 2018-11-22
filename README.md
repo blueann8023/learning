@@ -1,2 +1,5 @@
-# learning
-first usr idea
+## learning
+### fisrst
+
+```
+```
