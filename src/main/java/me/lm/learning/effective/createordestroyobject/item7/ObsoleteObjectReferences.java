@@ -1,5 +1,6 @@
 package me.lm.learning.effective.createordestroyobject.item7;
 
+
 import org.junit.Test;
 
 import java.lang.ref.WeakReference;

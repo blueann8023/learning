@@ -2,3 +2,4 @@
 .idea/
 target/
 /eureka-server/eurekaserver.iml
+/service-sayhi/servicesayhi.iml
