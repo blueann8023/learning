@@ -2,3 +2,4 @@
 .idea/
 target/
 /learning-springcloud/learningspringcloud.iml
+/eureka-server/eurekaserver.iml
