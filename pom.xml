@@ -7,6 +7,9 @@
     <artifactId>learning</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1</version>
+    <modules>
+        <module>learning-springcloud</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
