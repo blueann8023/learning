@@ -1,4 +1,4 @@
-package me.lm.learning.concurrent;
+package me.lm.basic.concurrent;
 
 public class ThreadPoolFunction {
     //

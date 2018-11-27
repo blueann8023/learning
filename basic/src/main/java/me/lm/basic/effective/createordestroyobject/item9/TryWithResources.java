@@ -1,4 +1,4 @@
-package me.lm.learning.effective.createordestroyobject.item9;
+package me.lm.basic.effective.createordestroyobject.item9;
 
 import java.io.*;
 
