@@ -8,10 +8,12 @@
     <version>0.0.1</version>
     <modules>
         <module>eureka-server</module>
+        <module>config-server</module>
         <module>service-sayhi</module>
         <module>service-feign</module>
         <module>service-ribbon</module>
         <module>service-zuul</module>
+        <module>config-client</module>
         <module>basic</module>
     </modules>
     <packaging>pom</packaging>
