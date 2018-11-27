@@ -24,7 +24,7 @@ public class ServiceSayHiApplication {
 
     @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "lm") String name) {
-        return "hi " + name + " ,i am from port:" + port;
+        return "hi " + name + " , i am from port:" + port;
     }
 }
 

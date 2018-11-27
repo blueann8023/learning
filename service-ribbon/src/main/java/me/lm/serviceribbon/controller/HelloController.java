@@ -14,6 +14,6 @@ public class HelloController {
 
     @GetMapping(value = "/hi")
     public String hi(@RequestParam String name) {
-        return helloService.hiService( name );
+        return "ribbon:" + helloService.hiService( name );
     }
 }
