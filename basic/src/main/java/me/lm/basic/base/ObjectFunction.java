@@ -1,5 +1,7 @@
 package me.lm.basic.base;
 
+import org.junit.Test;
+
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
@@ -129,5 +131,24 @@ public class ObjectFunction implements Cloneable, Serializable {
     public static void main(String[] args) {
         ObjectFunction o = new ObjectFunction();
         o.clone();
+    }
+
+    @Test
+    public void test(){
+        testField(Float.class);
+    }
+    public void testField(Class field) {
+
+        if (field == String.class) {
+            System.out.println("String");
+        } else if (field == Float.class) {
+            System.out.println("Float");
+        } else if (field == Integer.class) {
+            System.out.println("Integer");
+        } else if (field == Boolean.class) {
+            System.out.println("Boolean");
+        } else {
+
+        }
     }
 }

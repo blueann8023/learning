@@ -4,3 +4,4 @@ target/
 /eureka-server/eurekaserver.iml
 /service-sayhi/servicesayhi.iml
 /basic/basic.iml
+/web-server/web-server.iml
