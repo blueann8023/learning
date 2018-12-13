@@ -5,3 +5,4 @@ target/
 /service-sayhi/servicesayhi.iml
 /basic/basic.iml
 /web-server/web-server.iml
+/netty-client/nettyclient.iml
