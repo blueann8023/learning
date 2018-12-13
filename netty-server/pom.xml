@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.lm</groupId>
-    <artifactId>web-server</artifactId>
+    <artifactId>netty-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>web-server</name>
-    <description>Web Server</description>
+    <name>netty-server</name>
+    <description>Netty Server</description>
 
     <parent>
         <artifactId>learning</artifactId>
