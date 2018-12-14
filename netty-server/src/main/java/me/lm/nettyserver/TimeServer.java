@@ -1,5 +1,6 @@
 package me.lm.nettyserver;
 
+
 import io.netty.bootstrap.ServerBootstrap;
 
 import io.netty.channel.ChannelFuture;
@@ -13,11 +14,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * Discards any incoming data.
  */
-public class DiscardServer {
+public class TimeServer {
 
     private int port;
 
-    public DiscardServer(int port) {
+    public TimeServer(int port) {
         this.port = port;
     }
 
@@ -31,7 +32,7 @@ public class DiscardServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                         @Override
                         public void initChannel(SocketChannel ch) {
-                            ch.pipeline().addLast(new DiscardServerHandler());
+                            ch.pipeline().addLast(new TimeServerHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)
