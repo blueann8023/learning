@@ -1,9 +1,16 @@
 package me.lm.basic.guava;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Predicate;
-import com.google.common.collect.*;
+import com.google.common.collect.FluentIterable;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Range;
 import com.google.common.util.concurrent.RateLimiter;
 import com.sun.istack.internal.Nullable;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -16,13 +23,29 @@ public class Guava {
 
     RateLimiter rateLimiter = RateLimiter.create(1);
 
+
+
+    @Test
+    public void testPaird() {
+        String value = "{\"right\":20,\"left\":10}";
+        MutablePair MutablePair = JSONObject.parseObject(value,MutablePair.class);
+        System.out.println(JSON.toJSON(MutablePair));
+    }
+
+    @Test
+    public void testRange() {
+        List<Range> white = Lists.newArrayList();
+        Range<Integer> open = Range.closed(100, 200);
+        white.add(open);
+        System.out.println(JSON.toJSON(white));
+    }
+
     @Test
     public void testRateLimiter() {
         for (int i = 0; i < 12; i++) {
             rateLimiter.acquire(1);
             System.out.println(i);
         }
-
     }
 
     @Test
