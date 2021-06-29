@@ -1,15 +1,17 @@
 package me.lm.basic;
 
-import org.joda.time.DateTime;
+
+import org.assertj.core.util.Lists;
 
 /**
  * Created by blue_ann on 13/03/2019.
  */
 public class test {
-    public static void main(String[] args) {
-        float a = 45f/120f;
-        System.out.println(a);
+	public static void main(String[] args) {
 
-    }
+		System.out.println(Lists.emptyList().containsAll(Lists.emptyList()));
 
+
+
+	}
 }

@@ -49,6 +49,45 @@
             <artifactId>elasticsearch</artifactId>
             <version>5.6.3</version>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sankuai.movie.avitrade</groupId>
+            <artifactId>avitrade-nuovostock-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>avitrade-nuovoorder-api</artifactId>
+            <groupId>com.sankuai.movie.avitrade</groupId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>movie-uorder-search.export</artifactId>
+            <groupId>com.meituan.service.movie</groupId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.maoyan.trade</groupId>
+            <artifactId>show.export</artifactId>
+            <version>1.6.18</version>
+        </dependency>
+        <dependency>
+            <groupId>com.maoyan</groupId>
+            <artifactId>maoyan-inf-bom</artifactId>
+            <version>1.2.14-SPRINGBOOT.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.maoyan</groupId>
+            <artifactId>maoyan-settlement-export</artifactId>
+            <version>1.0.2-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
