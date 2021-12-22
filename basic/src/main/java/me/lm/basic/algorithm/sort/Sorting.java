@@ -1,4 +1,4 @@
-package me.lm.basic.algorithm;
+package me.lm.basic.algorithm.sort;
 
 
 
@@ -7,27 +7,9 @@ public class Sorting {
 
 
 
-    //Insertion Sort
-    //将无序数组中的key，插入到有序数组中
-    //worst:O(n^2)
 
-    /**
-     *
-     * @param array
-     */
-    public void insertionSort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int key = array[i];
-            int j = i - 1;
-            while (j >= 0 && array[j] > key) {
-                array[j + 1] = array[j];
-                j--;
-            }
-            array[j + 1] = key;
-        }
-    }
 
-    //Merge Sort
+
 
     // 交换排序：冒泡+快速
     // 冒泡： 稳定
@@ -165,7 +147,7 @@ public class Sorting {
     }
 
     //选择排序：简单选择 + 树形选择 + 堆排
-    //简单选择：选择最小的后移动到数组最前
+    //简单选择：
     public void simpleSelectSort(int[] array) {
 
     }

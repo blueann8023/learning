@@ -1,4 +1,4 @@
-package me.lm.basic.spring;
+package me.lm.spring;
 
 
 import org.slf4j.Logger;

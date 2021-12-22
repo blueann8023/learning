@@ -25,9 +25,6 @@ public class SynchronizedFunction {
     //核心原理 读写状态 + 等待队列
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
-    //CountDownLatch 共享锁 乐观锁 公平 多个线程countdown 多个线程await
-    //核心原理 count + 等待线程进入队列 阻塞前Node设为通知转态 链式唤醒
-    private CountDownLatch countDownLatch = new CountDownLatch(2);
 
     //CyclicBarrier  同步屏障
     private CyclicBarrier cyclicBarrier = new CyclicBarrier(10);

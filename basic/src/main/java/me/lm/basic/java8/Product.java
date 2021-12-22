@@ -1,4 +1,4 @@
-package me.lm.basic.book;
+package me.lm.basic.java8;
 
 import org.apache.commons.lang3.tuple.Pair;
 
