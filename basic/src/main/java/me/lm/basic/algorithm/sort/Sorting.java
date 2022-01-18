@@ -2,14 +2,8 @@ package me.lm.basic.algorithm.sort;
 
 
 
-//八大排序
+
 public class Sorting {
-
-
-
-
-
-
 
     // 交换排序：冒泡+快速
     // 冒泡： 稳定
@@ -64,7 +58,7 @@ public class Sorting {
         }
     }
 
-    // 快速排序：挖坑填数+分治法
+    // 快速排序：分治法
     public void quick(int[] array) {
         quick(array, 0, array.length - 1);
     }

@@ -6,3 +6,7 @@ target/
 /basic/basic.iml
 /web-server/web-server.iml
 /netty-client/nettyclient.iml
+*.iml
+*.index
+*.hprof
+*.class

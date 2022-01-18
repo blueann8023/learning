@@ -15,8 +15,6 @@
         <module>service-zuul</module>
         <module>config-client</module>
         <module>basic</module>
-        <module>netty-server</module>
-        <module>netty-client</module>
         <module>kafka-producer</module>
     </modules>
     <packaging>pom</packaging>

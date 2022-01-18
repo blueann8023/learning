@@ -38,6 +38,7 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.2</version>
         </dependency>
+
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
@@ -50,19 +51,17 @@
             <version>2.6</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.sankuai.movie.avitrade</groupId>
-            <artifactId>avitrade-nuovostock-api</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.sankuai.movie.avitrade</groupId>-->
+            <!--<artifactId>avitrade-nuovostock-api</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
 
-
-
-        <dependency>
-            <groupId>com.maoyan.trade</groupId>
-            <artifactId>show.export</artifactId>
-            <version>1.6.18</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.maoyan.trade</groupId>-->
+            <!--<artifactId>show.export</artifactId>-->
+            <!--<version>1.6.18</version>-->
+        <!--</dependency>-->
 
 
         <dependency>
@@ -87,6 +86,19 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>16.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.23.Final</version>
+            <scope>compile</scope>
         </dependency>
 
         <!--<dependency>-->
