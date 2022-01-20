@@ -1,7 +1,7 @@
 package me.lm.basic.algorithm.union;
 
 /**
- * Base Solution of Dynamic Connectivity  Problem
+ * Base Solution of Dynamic Connectivity Problem
  */
 public class UnionFind {
 

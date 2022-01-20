@@ -8,6 +8,6 @@ package me.lm.jvm.memory;
  */
 public class SizeOfObject {
     public static void main(String[] args) {
-        System.out.println(ObjectSizeAgent.sizeof(new Object()));
+//        System.out.println(ObjectSizeAgent.sizeof(new Object()));
     }
 }

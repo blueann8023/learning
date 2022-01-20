@@ -1,4 +1,4 @@
-package me.lm.jvm.memory;
+package me.lm.packjar;
 
 import java.lang.instrument.Instrumentation;
 
