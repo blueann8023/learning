@@ -1,4 +1,4 @@
-package me.lm.spring.cycle;
+package me.lm.spring;
 
 /**
  * TODO

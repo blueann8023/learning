@@ -8,7 +8,7 @@ package me.lm.basic.algorithm.graph;
  */
 public interface Path {
 
-    boolean hasPath(int to);
+    boolean hasPath(int from, int to);
 
-    Iterable<Integer> path(int to);
+    Iterable<Integer> path(int from, int to);
 }

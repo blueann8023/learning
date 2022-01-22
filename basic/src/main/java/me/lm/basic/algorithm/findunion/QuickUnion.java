@@ -1,9 +1,9 @@
-package me.lm.basic.algorithm.union;
+package me.lm.basic.algorithm.findunion;
 
 /**
  * Base Solution of Dynamic Connectivity Problem
  */
-public class UnionFind {
+public class QuickUnion {
 
     public static final void test(int args) {
 

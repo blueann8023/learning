@@ -1,4 +1,4 @@
-package me.lm.basic.algorithm.union;
+package me.lm.basic.algorithm.findunion;
 
 /**
  * TODO
