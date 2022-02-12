@@ -5,9 +5,9 @@
 //import com.maoyan.settlement.export.param.TOpenPlatformOrderRequest;
 //import com.maoyan.settlement.export.param.TOpenPlatformSeatRequest;
 //import com.meituan.service.mobile.mtthrift.util.json.JacksonUtils;
-//import com.meituan.service.movie.order.search.common.CoreOrderRequestParam;
-//import com.meituan.service.movie.order.search.common.ResponseFieldParam;
-//import com.meituan.service.movie.order.search.thrift.coreorder.TCoreOrderRequest;
+//import com.meituan.service.movie.order.symboltable.common.CoreOrderRequestParam;
+//import com.meituan.service.movie.order.symboltable.common.ResponseFieldParam;
+//import com.meituan.service.movie.order.symboltable.thrift.coreorder.TCoreOrderRequest;
 //import com.sankuai.movie.avitrade.nuovoorder.api.TCreateRequest;
 //import com.sankuai.movie.avitrade.nuovoorder.api.TCreateSeatPromotion;
 //import com.sankuai.movie.avitrade.nuovostock.api.TBaseSeat;
