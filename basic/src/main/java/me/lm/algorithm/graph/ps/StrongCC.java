@@ -23,7 +23,7 @@ public class StrongCC implements Reachability {
     private void doSCC(Digraph graph) {
         //还是没太明白这个算法的逻辑证明
         Digraph reverse = graph.reverse();
-        Iterable<Integer> reversePostOrder = new DFS(reverse).reversePostOrder();
+        Iterable<Integer> reversePostOrder = new DFS(reverse).topologicalSort();
         for (Integer i : reversePostOrder) {
             if (!marked[i]) {
                 doDFS(graph, i);

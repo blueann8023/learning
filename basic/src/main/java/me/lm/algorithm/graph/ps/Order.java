@@ -7,7 +7,8 @@ package me.lm.algorithm.graph.ps;
  * @since 2022/1/24
  */
 public interface Order {
+
     Iterable<Integer> postOrder();
 
-    Iterable<Integer> reversePostOrder();
+    Iterable<Integer> topologicalSort();
 }

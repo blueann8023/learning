@@ -10,7 +10,6 @@ import me.lm.algorithm.graph.DefaultDirectedEdge;
  */
 public interface ShortestPath {
 
-
     float dist(int from, int to);// source-sink
 
     Iterable<DefaultDirectedEdge> path(int from, int to);

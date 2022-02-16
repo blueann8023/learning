@@ -9,7 +9,7 @@ package me.lm.algorithm.graph.ps;
 public interface Cycle {
     boolean haseCycle();
 
-    Iterable<Integer> cycle();
+    Iterable<Integer> cycle(); // 有环
 
-    Iterable<Integer> topologicalSort();
+//    Iterable<Integer> topologicalSort();//DAG 无环
 }

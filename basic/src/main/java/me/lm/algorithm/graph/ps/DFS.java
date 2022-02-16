@@ -83,7 +83,7 @@ public class DFS implements Path, Reachability, Cycle, Order {
     @Override
     public Iterable<Integer> topologicalSort() {
         if (!haseCycle()) {
-            return reversePostOrder();
+            return null;
         }
         return null;
     }
@@ -97,13 +97,6 @@ public class DFS implements Path, Reachability, Cycle, Order {
         }
         return marked;
         // 还有一种栈
-    }
-
-
-    @Override
-    public Iterable<Integer> reversePostOrder() {
-
-        return null;
     }
 
     @Override

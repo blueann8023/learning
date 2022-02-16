@@ -7,4 +7,7 @@ package me.lm.pattern.proxy;
  * @since 2022/1/18
  */
 public class DynamicProxyWithCGlib {
+    public static void main(String[] args) {
+
+    }
 }
