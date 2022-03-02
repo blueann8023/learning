@@ -1,4 +1,4 @@
-package me.lm.basic.socket;
+package me.lm.socket;
 
 import org.junit.Test;
 

@@ -8,4 +8,5 @@ package me.lm.algorithm.list;
  */
 public interface List<T> {
     void reverse();
+    void reverseByGroup(int k);
 }

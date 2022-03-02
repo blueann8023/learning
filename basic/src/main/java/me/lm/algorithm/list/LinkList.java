@@ -1,5 +1,6 @@
 package me.lm.algorithm.list;
 
+
 /**
  * TODO
  *
@@ -12,19 +13,48 @@ public class LinkList<T> implements List<T> {
 
     @Override
     public void reverse() {
+        head = reverse(head);
+    }
+
+    public Node reverse(Node head) {
+        if (head == null) {
+            return head;
+        }
+        Node<T> pre = head;
+        Node<T> cur = head.next;
+        while (cur != null) {
+            pre = cur;
+            cur = cur.next;
+            cur.next = pre;
+        }
+        return pre;
+    }
+
+    @Override
+    public void reverseByGroup(int k) {
         if (head == null) {
             return;
         }
-        Node<T> aft = head;
-        Node<T> pre = head.next;
-        while (pre != null) {
-            Node<T> temp = pre.next;
-            pre.next = aft;
-            aft = pre;
-            pre = temp;
+        reverseByGroup(this.head, k);
+    }
+
+    private Node reverseByGroup(Node<T> head, int k) {
+
+        // 探测
+        Node kNode = getK(head, k);
+        if (kNode == null) {
+            return head;
         }
-        head.next = null;
-        head = aft;
+        // 切割
+        Node nextHead = kNode.next;
+        kNode.next = null;
+        Node preHead = reverse(head);
+        Node newHead = reverseByGroup(nextHead, k);
+        return null;
+    }
+
+    private Node getK(Node<T> head, int k) {
+        return new Node();
     }
 
     private static class Node<T> {
