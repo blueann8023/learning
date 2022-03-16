@@ -6,7 +6,6 @@ package me.lm.algorithm.list;
  * @author bule_ann
  * @since 2022/1/26
  */
-public interface List<T> {
+public interface ListA<T> {
     void reverse();
-    void reverseByGroup(int k);
 }

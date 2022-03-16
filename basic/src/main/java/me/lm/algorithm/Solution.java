@@ -5,6 +5,23 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Solution {
+
+
+
+
+    //链表
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        public ListNode(int val) {
+            this.val = val;
+        }
+    }
+
+
+
+
     //有序二维数组查找，从右上角或左下角开始查找
     public boolean find2Array(int target, int[][] array) {
         int i = 0;
@@ -77,12 +94,6 @@ public class Solution {
         return null;
     }
 
-
-    //链表
-    public class ListNode {
-        int val;
-        ListNode next;
-    }
 
     //反转打印
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
