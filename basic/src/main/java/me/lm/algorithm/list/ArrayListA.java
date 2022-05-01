@@ -19,6 +19,124 @@ public class ArrayListA {
 
     }
 
+    //买卖股票的最佳时机3 - 动态规划
+    public int maxProfit3(int[] prices) {
+        return 0;
+    }
+
+    //买卖股票的最佳时机2 - 贪心
+    public int maxProfit2(int[] prices) {
+        int ans = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            int d = prices[i + 1] - prices[i];
+            if (d > 0) {
+                ans += d;
+            }
+        }
+        return ans;
+    }
+
+    //买卖股票的最佳时机 - 贪心
+    public int maxProfit(int[] prices) {
+        int max = 0;
+        int minPrice = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            minPrice = Math.min(minPrice, prices[i]);
+            max = Math.max(prices[i] - minPrice, max);
+        }
+        return max;
+    }
+
+    //最大子数组和
+    public int maxSubArray(int[] nums) {
+        int fi = 0;
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            fi = Math.max(fi + nums[i], nums[i]);
+            max = Math.max(max, fi);
+        }
+        return max;
+
+    }
+
+    // 在排序数组中查找元素的第一个和最后一个位置
+    public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0) {
+            return new int[]{-1, -1};
+        }
+
+        int firstPosition = findFirst(nums, target);
+        if (firstPosition == -1) {
+            return new int[]{-1, -1};
+        }
+        int lastPosition = findLast(nums, target);
+        return new int[]{firstPosition, lastPosition};
+    }
+
+    private int findLast(int[] nums, int target) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int mid = (l + r + 1) >> 1;
+            int source = nums[mid];
+            if (source > target) {
+                r = mid - 1;
+            } else if (source == target) {
+                l = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
+    }
+
+    private int findFirst(int[] nums, int target) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int mid = (l + r) >> 1;
+            int source = nums[mid];
+            if (source > target) {
+                r = mid - 1;
+            } else if (source == target) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        if (nums[l] == target) {
+            return l;
+        }
+        return -1;
+    }
+
+    public int divide(int dividend, int divisor) {
+        if (dividend == Integer.MIN_VALUE && divisor == -1) {
+            return Integer.MAX_VALUE;
+        }
+
+        int sign = -1;
+        if ((dividend > 0 && divisor > 0) || (dividend < 0 && divisor < 0)) {
+            sign = 1;
+        }
+
+        dividend = dividend > 0 ? -dividend : dividend;
+        divisor = divisor > 0 ? -divisor : divisor;
+
+        int ans = 0;
+        while (dividend <= divisor) {
+            int count = 1, temp = divisor;
+            while (temp <= dividend - temp) {
+                temp += temp;
+                count += count;
+            }
+            dividend -= temp;
+            ans += count;
+        }
+
+
+        return sign > 0 ? ans : -ans;
+    }
+
+
     public int findKthLargest(int[] nums, int k) {
 
         PriorityQueue<Integer> queue = new PriorityQueue<>();
@@ -550,21 +668,20 @@ public class ArrayListA {
 
     // 跳跃 最小步数
     public int jump2(int[] nums) {
-        int step = 0;
-        int nextMaxPosition = 0;
-        int curMaxPosition = 0;
-        for (int i = 0; i < nums.length - 1; i++) {
-            nextMaxPosition = Math.max(nextMaxPosition, nums[i] + i);
-//            if( nextMaxPosition >= nums.length-1){
-//                step++;
-//                break;
-//            }
-            if (i == curMaxPosition) {
-                curMaxPosition = nextMaxPosition;
-                step++;
-            }
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
-        return step;
+        int jumpCount = 0;
+        int curMaxPosition = 0;
+        int nextMaxPosition = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (curMaxPosition < i) {
+                jumpCount++;
+                curMaxPosition = nextMaxPosition;
+            }
+            nextMaxPosition = Math.max(nextMaxPosition, nums[i] + i);
+        }
+        return jumpCount;
     }
 
     public int jump(int[] nums) {

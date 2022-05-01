@@ -1,12 +1,8 @@
 package me.lm.algorithm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class Solution {
-
-
 
 
     //链表
@@ -20,10 +16,9 @@ public class Solution {
     }
 
 
-
-
     //有序二维数组查找，从右上角或左下角开始查找
     public boolean find2Array(int target, int[][] array) {
+
         int i = 0;
         int j = array[0].length - 1;
         while (i <= array.length - 1 && j >= 0) {
@@ -111,76 +106,114 @@ public class Solution {
         //递归 ：实质也是栈结构
     }
 
-    // 倒数第k个
-    public ListNode FindKthToTail(ListNode head, int k) {
-        // 快慢指针，快指针先移动k-1次，快慢指针同时移动这样当快指针到length时，满指针到length-(k-1) 即倒数第k个
-        if (head == null || k <= 0) {
-            return null;
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        int left = 1;
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        if (root != null) {
+            queue.add(root);
         }
-        ListNode quick = head;
-        for (int i = 0; i < k - 1; i++) {
-            if (quick.next == null) {
-                return null;
-            }
-            quick = quick.next;
-        }
-
-        ListNode slow = head;
-        while (quick.next != null) {
-            quick = quick.next;
-            slow = slow.next;
-        }
-        return slow;
-        //首次遍历记录length，二次遍历到length+1-k个（即移动length-k次）
-    }
-
-    //反转链表
-    public ListNode ReverseList(ListNode head) {
-        ListNode pre = null, next;
-        while (head != null) {
-            next = head.next;
-            head.next = pre;
-            pre = head;
-            head = next;
-        }
-        return pre;
-    }
-
-    //链表合并
-    public ListNode Merge(ListNode list1, ListNode list2) {
-
-        if (list1 == null) return list2;
-        if (list2 == null) return list1;
-        ListNode result = null, current = null;
-
-        while (list1 != null && list2 != null) {
-            if (list1.val <= list2.val) {
-                if (result == null) {
-                    result = current = list1;
-                } else {
-                    current.next = list1;
-                    current = current.next;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> temp = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.poll();
+                temp.add(treeNode.val);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
                 }
-                list1 = list1.next;
-            } else {
-                if (result == null) {
-                    result = current = list2;
-                } else {
-                    current.next = list2;
-                    current = current.next;
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
                 }
-                list2 = list2.next;
             }
-        }
-        if (list1 != null) {
-            current.next = list1;
-        }
-        if (list2 != null) {
-            current.next = list2;
+            left = -left;
+            result.add(temp);
         }
         return result;
+    }
+
+
+    //二叉树的层序遍历 II
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        LinkedList<List<Integer>> result = new LinkedList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        if (root != null) {
+            queue.add(root);
+        }
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> temp = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.poll();
+                temp.add(treeNode.val);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
+                }
+            }
+            result.addFirst(temp);
+        }
+        return result;
+    }
+
+    //二叉树的层序遍历
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        if (root != null) {
+            queue.add(root);
+        }
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> temp = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.poll();
+                temp.add(treeNode.val);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
+                }
+            }
+            result.add(temp);
+        }
+        return result;
+    }
+
+    // 二叉树的最大深度
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(maxDepth(root.right) + 1, maxDepth(root.left) + 1);
+    }
+
+    //二叉树的最小深度
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+
+        if (root.left == null) {
+            return minDepth(root.right) + 1;
+        }
+        if (root.right == null) {
+            return minDepth(root.left) + 1;
+        }
+        int l = minDepth(root.left);
+        int r = minDepth(root.right);
+
+        return Math.min(l + 1, r + 1);
 
     }
+
 
     //树
     public class TreeNode {

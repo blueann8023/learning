@@ -1,5 +1,7 @@
 package me.lm.algorithm.list;
 
+import me.lm.algorithm.Solution;
+
 /**
  * TODO
  *
@@ -13,6 +15,53 @@ public class LinkListA implements ListA {
     @Override
     public void reverse() {
         head = reverse(head);
+    }
+
+    //两两交换链表中的节点
+    public ListNode swapPairs(ListNode head) {
+
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+
+        ListNode pre = dummy, left = head, right;
+
+        while (left != null && left.next != null) {
+
+            right = left.next;
+
+            ListNode next = right.next;
+            right.next = left;
+            pre.next = right;
+            left.next = next;
+            pre = left;
+            left = next;
+        }
+        return dummy.next;
+    }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0, head);
+
+        ListNode pre = dummy;
+        ListNode end = pre;
+        while (end.next != null) {
+
+            for (int i = 0; i < k && end != null; i++) {
+                end = end.next;
+            }
+            if (end == null) {
+                return dummy.next;
+            }
+
+            ListNode start = pre.next;
+            ListNode nex = end.next;
+            end.next = null;
+            pre.next = reverse(start);
+            start.next = nex;
+            pre = start;
+            end = pre;
+        }
+        return dummy.next;
     }
 
     //删除排序链表中的重复元素 II
@@ -127,7 +176,6 @@ public class LinkListA implements ListA {
         preN.next = N.next;
         return dump.next;
     }
-
     // 链表反转 迭代
     public ListNode reverse(ListNode head) {
 
@@ -229,28 +277,5 @@ public class LinkListA implements ListA {
         }
     }
 
-    public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode dummy = new ListNode(0, head);
 
-        ListNode pre = dummy;
-        ListNode end = pre;
-        while (end.next != null) {
-
-            for (int i = 0; i < k && end != null; i++) {
-                end = end.next;
-            }
-            if (end == null) {
-                return dummy.next;
-            }
-
-            ListNode start = pre.next;
-            ListNode nex = end.next;
-            end.next = null;
-            pre.next = reverse(start);
-            start.next = nex;
-            pre = start;
-            end = pre;
-        }
-        return dummy.next;
-    }
 }
